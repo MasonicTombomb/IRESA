@@ -1,0 +1,71 @@
+.TH "md__sourcecode_2_r_e_a_d_m_e" 3 "Fri Jan 19 2024 15:44:49" "Version 1.0.0" "IC: Icon Creator" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__sourcecode_2_r_e_a_d_m_e \- IRESA: Icon Resizer and Export Script 
+.PP
+ IRESA (Icon Resizer and Export Script) is a Python application designed for resizing images and creating icons in ICO and PNG formats for various sizes\&.
+.SH "Features"
+.PP
+.IP "\(bu" 2
+Resize images to different sizes\&.
+.IP "\(bu" 2
+Generate ICO and PNG files for each resized image\&.
+.PP
+.SH "Prerequisites"
+.PP
+.IP "\(bu" 2
+Python 3
+.IP "\(bu" 2
+OpenCV (\fRpip install opencv-python\fP)
+.IP "\(bu" 2
+Pillow (\fRpip install Pillow\fP)
+.PP
+.SH "Usage"
+.PP
+.IP "1." 4
+Clone the repository:
+.PP
+.PP
+.nf
+git clone https://github\&.com/your\-username/iresa\-icon\-resizer\&.git
+cd iresa\-icon\-resizer
+.fi
+.PP
+
+.IP "2." 4
+Install dependencies:
+.PP
+.PP
+.nf
+pip install \-r requirements\&.txt
+.fi
+.PP
+
+.IP "3." 4
+Place your source image file named \fRSource\&.png\fP in the project directory\&.
+.IP "4." 4
+Run the application:
+.PP
+.PP
+.nf
+python main\&.py
+.fi
+.PP
+
+.IP "5." 4
+Check the 'ICOs' and 'PNGs' directories for the generated icons\&.
+.PP
+.SH "Configuration"
+.PP
+.IP "\(bu" 2
+Customize the sizes in the \fRsizes\fP array in \fR\fBmain\&.py\fP\fP to fit your icon size requirements\&.
+.PP
+.SH "Error Handling"
+.PP
+The application includes basic error handling for loading the source file, resizing the image, converting to PIL, and saving the images\&. Adjustments can be made based on specific requirements and potential error scenarios\&.
+.SH "License"
+.PP
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details\&. ```
+.PP
+Feel free to customize the content further based on your specific project details and requirements\&. 

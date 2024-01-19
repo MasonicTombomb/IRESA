@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="namespacemain" kind="namespace" language="Python">
+    <compoundname>main</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacemain_1af4cff5b4ca24379243ebd8090d7c4594" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>main.message</definition>
+        <argsstring></argsstring>
+        <name>message</name>
+        <qualifiedname>main.message</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Sourcecode/main.py" line="7" column="1" bodyfile="Sourcecode/main.py" bodystart="7" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacemain_1a024aa878fd056fb1de6874757c3e4e73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>main.resize_image</definition>
+        <argsstring>(image, size)</argsstring>
+        <name>resize_image</name>
+        <qualifiedname>main.resize_image</qualifiedname>
+        <param>
+          <type>image</type>
+          <defname>image</defname>
+        </param>
+        <param>
+          <type>size</type>
+          <defname>size</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Resize the input image to the specified size.
+
+Parameters:
+- image: numpy.ndarray
+    The input image as a NumPy array.
+- size: tuple
+    A tuple representing the target size (width, height) for resizing.
+
+Returns:
+- numpy.ndarray
+    The resized image.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Sourcecode/main.py" line="10" column="1" bodyfile="Sourcecode/main.py" bodystart="10" bodyend="30"/>
+        <referencedby refid="namespacemain_1a3140e9a5b6a71ffbf498198cfc471b88" compoundref="main_8py" startline="72" endline="111">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemain_1afae733b48764aa3d8ecaa7657d7711d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>main.convert_to_pil</definition>
+        <argsstring>(image)</argsstring>
+        <name>convert_to_pil</name>
+        <qualifiedname>main.convert_to_pil</qualifiedname>
+        <param>
+          <type>image</type>
+          <defname>image</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Convert the input image (in BGR format) to a PIL Image.
+
+Parameters:
+- image: numpy.ndarray
+    The input image as a NumPy array in BGR format.
+
+Returns:
+- PIL.Image.Image
+    The converted PIL Image.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Sourcecode/main.py" line="31" column="1" bodyfile="Sourcecode/main.py" bodystart="31" bodyend="49"/>
+        <referencedby refid="namespacemain_1a3140e9a5b6a71ffbf498198cfc471b88" compoundref="main_8py" startline="72" endline="111">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemain_1a7b13bdbc641d0535cf7e631cb3d447b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>main.save_image</definition>
+        <argsstring>(image_pil, filename, image_format, folder)</argsstring>
+        <name>save_image</name>
+        <qualifiedname>main.save_image</qualifiedname>
+        <param>
+          <type>image_pil</type>
+          <defname>image_pil</defname>
+        </param>
+        <param>
+          <type>filename</type>
+          <defname>filename</defname>
+        </param>
+        <param>
+          <type>image_format</type>
+          <defname>image_format</defname>
+        </param>
+        <param>
+          <type>folder</type>
+          <defname>folder</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Save the PIL Image to a file with the specified filename and format in the specified folder.
+
+Parameters:
+- image_pil: PIL.Image.Image
+    The PIL Image to be saved.
+- filename: str
+    The name of the output file.
+- image_format: str
+    The format for saving the image (e.g., &apos;ICO&apos;, &apos;PNG&apos;).
+- folder: str
+    The name of the folder to save the image in.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Sourcecode/main.py" line="50" column="1" bodyfile="Sourcecode/main.py" bodystart="50" bodyend="71"/>
+        <referencedby refid="namespacemain_1a3140e9a5b6a71ffbf498198cfc471b88" compoundref="main_8py" startline="72" endline="111">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemain_1a3140e9a5b6a71ffbf498198cfc471b88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>main.main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <qualifiedname>main.main</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Main function to resize images and save in ICO and PNG formats.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Sourcecode/main.py" line="72" column="1" bodyfile="Sourcecode/main.py" bodystart="72" bodyend="111"/>
+        <references refid="namespacemain_1afae733b48764aa3d8ecaa7657d7711d2" compoundref="main_8py" startline="31" endline="49">convert_to_pil</references>
+        <references refid="namespacemain_1a024aa878fd056fb1de6874757c3e4e73" compoundref="main_8py" startline="10" endline="30">resize_image</references>
+        <references refid="namespacemain_1a7b13bdbc641d0535cf7e631cb3d447b7" compoundref="main_8py" startline="50" endline="71">save_image</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Sourcecode/main.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

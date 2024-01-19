@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespacemain" xml:lang="en-US">
+<title>main Namespace Reference</title>
+<indexterm><primary>main</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespacemain_1a024aa878fd056fb1de6874757c3e4e73">resize_image</link> (image, size)</para>
+</listitem>
+            <listitem><para><link linkend="_namespacemain_1afae733b48764aa3d8ecaa7657d7711d2">convert_to_pil</link> (image)</para>
+</listitem>
+            <listitem><para><link linkend="_namespacemain_1a7b13bdbc641d0535cf7e631cb3d447b7">save_image</link> (image_pil, filename, image_format, folder)</para>
+</listitem>
+            <listitem><para><link linkend="_namespacemain_1a3140e9a5b6a71ffbf498198cfc471b88">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespacemain_1af4cff5b4ca24379243ebd8090d7c4594">message</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_namespacemain_1afae733b48764aa3d8ecaa7657d7711d2"/><section>
+    <title>convert_to_pil()</title>
+<indexterm><primary>convert_to_pil</primary><secondary>main</secondary></indexterm>
+<indexterm><primary>main</primary><secondary>convert_to_pil</secondary></indexterm>
+<para><computeroutput>main.convert_to_pil ( image)</computeroutput></para>
+<para><literallayout><computeroutput>Convert the input image (in BGR format) to a PIL Image.
+
+Parameters:
+- image: numpy.ndarray
+    The input image as a NumPy array in BGR format.
+
+Returns:
+- PIL.Image.Image
+    The converted PIL Image.
+</computeroutput></literallayout> </para>
+<programlisting linenumbering="unnumbered">00031 <emphasis role="keyword">def&#32;</emphasis>convert_to_pil(image):
+00032 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;&quot;&quot;</emphasis>
+00033 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;Convert&#32;the&#32;input&#32;image&#32;(in&#32;BGR&#32;format)&#32;to&#32;a&#32;PIL&#32;Image.</emphasis>
+00034 <emphasis role="stringliteral"></emphasis>
+00035 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;Parameters:</emphasis>
+00036 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;-&#32;image:&#32;numpy.ndarray</emphasis>
+00037 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;The&#32;input&#32;image&#32;as&#32;a&#32;NumPy&#32;array&#32;in&#32;BGR&#32;format.</emphasis>
+00038 <emphasis role="stringliteral"></emphasis>
+00039 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;Returns:</emphasis>
+00040 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;-&#32;PIL.Image.Image</emphasis>
+00041 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;The&#32;converted&#32;PIL&#32;Image.</emphasis>
+00042 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+00043 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>:
+00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;Image.fromarray(cv.cvtColor(image,&#32;cv.COLOR_BGR2RGB))
+00045 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">except</emphasis>&#32;Exception&#32;<emphasis role="keyword">as</emphasis>&#32;e:
+00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;print(f<emphasis role="stringliteral">&quot;Error&#32;converting&#32;to&#32;PIL&#32;Image:&#32;{e}&quot;</emphasis>)
+00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keywordtype">None</emphasis>
+00048 
+00049 
+</programlisting><para>
+Referenced by <link linkend="_l00072">main()</link>.</para>
+</section>
+<anchor xml:id="_namespacemain_1a3140e9a5b6a71ffbf498198cfc471b88"/><section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>main</secondary></indexterm>
+<indexterm><primary>main</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>main.main ( )</computeroutput></para>
+<para><literallayout><computeroutput>Main function to resize images and save in ICO and PNG formats.
+</computeroutput></literallayout> </para>
+<programlisting linenumbering="unnumbered">00072 <emphasis role="keyword">def&#32;</emphasis><link linkend="_namespacemain">main</link>():
+00073 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;&quot;&quot;</emphasis>
+00074 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;Main&#32;function&#32;to&#32;resize&#32;images&#32;and&#32;save&#32;in&#32;ICO&#32;and&#32;PNG&#32;formats.</emphasis>
+00075 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+00076 &#32;&#32;&#32;&#32;<emphasis role="comment">#&#32;Check&#32;if&#32;the&#32;source&#32;file&#32;exists</emphasis>
+00077 &#32;&#32;&#32;&#32;source_file&#32;=&#32;<emphasis role="stringliteral">&quot;Source.png&quot;</emphasis>&#32;&#32;<emphasis role="comment">#&#32;The&#32;name&#32;and&#32;location&#32;fo&#32;the&#32;source&#32;ONG.&#32;(Relative&#32;path)</emphasis>
+00078 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;<emphasis role="keywordflow">not</emphasis>&#32;os.path.exists(source_file):
+00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;print(f<emphasis role="stringliteral">&quot;Source&#32;file&#32;&apos;{source_file}&apos;&#32;not&#32;found.&quot;</emphasis>)
+00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>
+00081 
+00082 &#32;&#32;&#32;&#32;<emphasis role="comment">#&#32;Load&#32;the&#32;source&#32;image</emphasis>
+00083 &#32;&#32;&#32;&#32;image&#32;=&#32;cv.imread(source_file)&#32;&#32;<emphasis role="comment">#&#32;The&#32;CV&#32;object&#32;of&#32;the&#32;image</emphasis>
+00084 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;image&#32;<emphasis role="keywordflow">is</emphasis>&#32;<emphasis role="keywordtype">None</emphasis>:
+00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;print(f<emphasis role="stringliteral">&quot;Error&#32;loading&#32;source&#32;image&#32;&apos;{source_file}&apos;.&quot;</emphasis>)
+00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>
+00087 
+00088 &#32;&#32;&#32;&#32;sizes&#32;=&#32;[16,&#32;24,&#32;32,&#32;48,&#32;64,&#32;72,&#32;96,&#32;144,&#32;152,&#32;180,&#32;192,&#32;256,&#32;310]&#32;&#32;<emphasis role="comment">#&#32;The&#32;sizing&apos;s&#32;of&#32;the&#32;image</emphasis>
+00089 
+00090 &#32;&#32;&#32;&#32;<emphasis role="comment">#&#32;Create&#32;directories&#32;if&#32;they&#32;don&apos;t&#32;exist</emphasis>
+00091 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;folder&#32;<emphasis role="keywordflow">in</emphasis>&#32;[<emphasis role="stringliteral">&quot;PNGs&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;ICOs&quot;</emphasis>]:
+00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;os.makedirs(folder,&#32;exist_ok=<emphasis role="keyword">True</emphasis>)
+00093 
+00094 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;size&#32;<emphasis role="keywordflow">in</emphasis>&#32;sizes:
+00095 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">#&#32;Resize&#32;image</emphasis>
+00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;resized_image&#32;=&#32;resize_image(image,&#32;(size,&#32;size))&#32;&#32;<emphasis role="comment">#&#32;The&#32;resized&#32;image</emphasis>
+00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;resized_image&#32;<emphasis role="keywordflow">is</emphasis>&#32;<emphasis role="keywordtype">None</emphasis>:
+00098 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">continue</emphasis>
+00099 
+00100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">#&#32;Convert&#32;to&#32;a&#32;PIL&#32;object</emphasis>
+00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;image_pil&#32;=&#32;convert_to_pil(resized_image)&#32;&#32;<emphasis role="comment">#&#32;The&#32;PIL.Image.Image&#32;object</emphasis>
+00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;image_pil&#32;<emphasis role="keywordflow">is</emphasis>&#32;<emphasis role="keywordtype">None</emphasis>:
+00103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">continue</emphasis>
+00104 
+00105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">#&#32;Save&#32;images&#32;in&#32;ICO&#32;format</emphasis>
+00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;save_image(image_pil,&#32;f<emphasis role="stringliteral">&quot;output{size}.ico&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;ICO&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;ICOs&quot;</emphasis>)
+00107 
+00108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">#&#32;Save&#32;images&#32;in&#32;PNG&#32;format</emphasis>
+00109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;save_image(image_pil,&#32;f<emphasis role="stringliteral">&quot;output{size}.png&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;PNG&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;PNGs&quot;</emphasis>)
+00110 
+00111 
+</programlisting><para>
+References <link linkend="_l00031">convert_to_pil()</link>, <link linkend="_l00010">resize_image()</link>, and <link linkend="_l00050">save_image()</link>.</para>
+</section>
+<anchor xml:id="_namespacemain_1a024aa878fd056fb1de6874757c3e4e73"/><section>
+    <title>resize_image()</title>
+<indexterm><primary>resize_image</primary><secondary>main</secondary></indexterm>
+<indexterm><primary>main</primary><secondary>resize_image</secondary></indexterm>
+<para><computeroutput>main.resize_image ( image,  size)</computeroutput></para>
+<para><literallayout><computeroutput>Resize the input image to the specified size.
+
+Parameters:
+- image: numpy.ndarray
+    The input image as a NumPy array.
+- size: tuple
+    A tuple representing the target size (width, height) for resizing.
+
+Returns:
+- numpy.ndarray
+    The resized image.
+</computeroutput></literallayout> </para>
+<programlisting linenumbering="unnumbered">00010 <emphasis role="keyword">def&#32;</emphasis>resize_image(image,&#32;size):
+00011 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;&quot;&quot;</emphasis>
+00012 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;Resize&#32;the&#32;input&#32;image&#32;to&#32;the&#32;specified&#32;size.</emphasis>
+00013 <emphasis role="stringliteral"></emphasis>
+00014 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;Parameters:</emphasis>
+00015 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;-&#32;image:&#32;numpy.ndarray</emphasis>
+00016 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;The&#32;input&#32;image&#32;as&#32;a&#32;NumPy&#32;array.</emphasis>
+00017 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;-&#32;size:&#32;tuple</emphasis>
+00018 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;A&#32;tuple&#32;representing&#32;the&#32;target&#32;size&#32;(width,&#32;height)&#32;for&#32;resizing.</emphasis>
+00019 <emphasis role="stringliteral"></emphasis>
+00020 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;Returns:</emphasis>
+00021 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;-&#32;numpy.ndarray</emphasis>
+00022 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;The&#32;resized&#32;image.</emphasis>
+00023 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+00024 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>:
+00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;cv.resize(image,&#32;size)
+00026 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">except</emphasis>&#32;Exception&#32;<emphasis role="keyword">as</emphasis>&#32;e:
+00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;print(f<emphasis role="stringliteral">&quot;Error&#32;resizing&#32;image:&#32;{e}&quot;</emphasis>)
+00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keywordtype">None</emphasis>
+00029 
+00030 
+</programlisting><para>
+Referenced by <link linkend="_l00072">main()</link>.</para>
+</section>
+<anchor xml:id="_namespacemain_1a7b13bdbc641d0535cf7e631cb3d447b7"/><section>
+    <title>save_image()</title>
+<indexterm><primary>save_image</primary><secondary>main</secondary></indexterm>
+<indexterm><primary>main</primary><secondary>save_image</secondary></indexterm>
+<para><computeroutput>main.save_image ( image_pil,  filename,  image_format,  folder)</computeroutput></para>
+<para><literallayout><computeroutput>Save the PIL Image to a file with the specified filename and format in the specified folder.
+
+Parameters:
+- image_pil: PIL.Image.Image
+    The PIL Image to be saved.
+- filename: str
+    The name of the output file.
+- image_format: str
+    The format for saving the image (e.g., &apos;ICO&apos;, &apos;PNG&apos;).
+- folder: str
+    The name of the folder to save the image in.
+</computeroutput></literallayout> </para>
+<programlisting linenumbering="unnumbered">00050 <emphasis role="keyword">def&#32;</emphasis>save_image(image_pil,&#32;filename,&#32;image_format,&#32;folder):
+00051 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;&quot;&quot;</emphasis>
+00052 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;Save&#32;the&#32;PIL&#32;Image&#32;to&#32;a&#32;file&#32;with&#32;the&#32;specified&#32;filename&#32;and&#32;format&#32;in&#32;the&#32;specified&#32;folder.</emphasis>
+00053 <emphasis role="stringliteral"></emphasis>
+00054 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;Parameters:</emphasis>
+00055 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;-&#32;image_pil:&#32;PIL.Image.Image</emphasis>
+00056 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;The&#32;PIL&#32;Image&#32;to&#32;be&#32;saved.</emphasis>
+00057 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;-&#32;filename:&#32;str</emphasis>
+00058 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;The&#32;name&#32;of&#32;the&#32;output&#32;file.</emphasis>
+00059 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;-&#32;image_format:&#32;str</emphasis>
+00060 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;The&#32;format&#32;for&#32;saving&#32;the&#32;image&#32;(e.g.,&#32;&apos;ICO&apos;,&#32;&apos;PNG&apos;).</emphasis>
+00061 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;-&#32;folder:&#32;str</emphasis>
+00062 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;The&#32;name&#32;of&#32;the&#32;folder&#32;to&#32;save&#32;the&#32;image&#32;in.</emphasis>
+00063 <emphasis role="stringliteral">&#32;&#32;&#32;&#32;&quot;&quot;&quot;</emphasis>
+00064 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>:
+00065 
+00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;save_path&#32;=&#32;os.path.join(folder,&#32;filename)&#32;&#32;<emphasis role="comment">#&#32;Path&#32;to&#32;save&#32;image&#32;too</emphasis>
+00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;image_pil.save(save_path,&#32;format=image_format)&#32;&#32;<emphasis role="comment">#&#32;The&#32;PIL.Image.Image&#32;object</emphasis>
+00068 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">except</emphasis>&#32;Exception&#32;<emphasis role="keyword">as</emphasis>&#32;e:
+00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;print(f<emphasis role="stringliteral">&quot;Error&#32;saving&#32;image:&#32;{e}&quot;</emphasis>)
+00070 
+00071 
+</programlisting><para>
+Referenced by <link linkend="_l00072">main()</link>.</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_namespacemain_1af4cff5b4ca24379243ebd8090d7c4594"/><section>
+    <title>message</title>
+<indexterm><primary>message</primary><secondary>main</secondary></indexterm>
+<indexterm><primary>main</primary><secondary>message</secondary></indexterm>
+<para><computeroutput>main.message</computeroutput></para></section>
+</section>
+</section>

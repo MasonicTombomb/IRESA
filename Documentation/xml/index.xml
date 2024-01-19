@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.10.0" xml:lang="en-US">
+  <compound refid="namespacemain" kind="namespace"><name>main</name>
+    <member refid="namespacemain_1af4cff5b4ca24379243ebd8090d7c4594" kind="variable"><name>message</name></member>
+    <member refid="namespacemain_1a024aa878fd056fb1de6874757c3e4e73" kind="function"><name>resize_image</name></member>
+    <member refid="namespacemain_1afae733b48764aa3d8ecaa7657d7711d2" kind="function"><name>convert_to_pil</name></member>
+    <member refid="namespacemain_1a7b13bdbc641d0535cf7e631cb3d447b7" kind="function"><name>save_image</name></member>
+    <member refid="namespacemain_1a3140e9a5b6a71ffbf498198cfc471b88" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="main_8py" kind="file"><name>main.py</name>
+  </compound>
+  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="dir_167bd5d8e65c8d2258232fe153f7f390" kind="dir"><name>Sourcecode</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

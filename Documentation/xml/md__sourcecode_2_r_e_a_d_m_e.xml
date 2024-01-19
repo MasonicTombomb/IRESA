@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="md__sourcecode_2_r_e_a_d_m_e" kind="page">
+    <compoundname>md__sourcecode_2_r_e_a_d_m_e</compoundname>
+    <title>IRESA: Icon Resizer and Export Script</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="md__sourcecode_2_r_e_a_d_m_e_1autotoc_md0"/> IRESA (Icon Resizer and Export Script) is a Python application designed for resizing images and creating icons in ICO and PNG formats for various sizes.</para>
+<sect1 id="md__sourcecode_2_r_e_a_d_m_e_1autotoc_md1">
+<title>Features</title><para><itemizedlist>
+<listitem><para>Resize images to different sizes.</para>
+</listitem><listitem><para>Generate ICO and PNG files for each resized image.</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="md__sourcecode_2_r_e_a_d_m_e_1autotoc_md2">
+<title>Prerequisites</title><para><itemizedlist>
+<listitem><para>Python 3</para>
+</listitem><listitem><para>OpenCV (<computeroutput>pip install opencv-python</computeroutput>)</para>
+</listitem><listitem><para>Pillow (<computeroutput>pip install Pillow</computeroutput>)</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="md__sourcecode_2_r_e_a_d_m_e_1autotoc_md3">
+<title>Usage</title><para><orderedlist>
+<listitem><para>Clone the repository:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">git<sp/>clone<sp/>https://github.com/your-username/iresa-icon-resizer.git</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>iresa-icon-resizer</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para>Install dependencies:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">pip<sp/>install<sp/>-r<sp/>requirements.txt</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para>Place your source image file named <computeroutput>Source.png</computeroutput> in the project directory.</para>
+</listitem><listitem><para>Run the application:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">python<sp/>main.py</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para>Check the &quot;ICOs&quot; and &quot;PNGs&quot; directories for the generated icons.</para>
+</listitem></orderedlist>
+</para>
+</sect1>
+<sect1 id="md__sourcecode_2_r_e_a_d_m_e_1autotoc_md4">
+<title>Configuration</title><para><itemizedlist>
+<listitem><para>Customize the sizes in the <computeroutput>sizes</computeroutput> array in <computeroutput><ref refid="main_8py" kindref="compound">main.py</ref></computeroutput> to fit your icon size requirements.</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="md__sourcecode_2_r_e_a_d_m_e_1autotoc_md5">
+<title>Error Handling</title><para>The application includes basic error handling for loading the source file, resizing the image, converting to PIL, and saving the images. Adjustments can be made based on specific requirements and potential error scenarios.</para>
+</sect1>
+<sect1 id="md__sourcecode_2_r_e_a_d_m_e_1autotoc_md6">
+<title>License</title><para>This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. ```</para>
+<para>Feel free to customize the content further based on your specific project details and requirements. </para>
+</sect1>
+    </detaileddescription>
+    <location file="Sourcecode/README.md"/>
+  </compounddef>
+</doxygen>

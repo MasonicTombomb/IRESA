@@ -1,0 +1,226 @@
+.TH "main" 3 "Fri Jan 19 2024 15:50:52" "Version 1.0.0" "IC: Icon Creator" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+main
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBresize_image\fP (image, size)"
+.br
+.ti -1c
+.RI "\fBconvert_to_pil\fP (image)"
+.br
+.ti -1c
+.RI "\fBsave_image\fP (image_pil, filename, image_format, folder)"
+.br
+.ti -1c
+.RI "\fBmain\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBmessage\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "main\&.convert_to_pil ( image)"
+
+.PP
+.nf
+Convert the input image (in BGR format) to a PIL Image\&.
+
+Parameters:
+- image: numpy\&.ndarray
+    The input image as a NumPy array in BGR format\&.
+
+Returns:
+- PIL\&.Image\&.Image
+    The converted PIL Image\&.
+
+.fi
+.PP
+ .PP
+.nf
+31 def convert_to_pil(image):
+32     """
+33     Convert the input image (in BGR format) to a PIL Image\&.
+34 
+35     Parameters:
+36     \- image: numpy\&.ndarray
+37         The input image as a NumPy array in BGR format\&.
+38 
+39     Returns:
+40     \- PIL\&.Image\&.Image
+41         The converted PIL Image\&.
+42     """
+43     try:
+44         return Image\&.fromarray(cv\&.cvtColor(image, cv\&.COLOR_BGR2RGB))
+45     except Exception as e:
+46         print(f"Error converting to PIL Image: {e}")
+47         return None
+48 
+49 
+.fi
+
+.PP
+Referenced by \fBmain()\fP\&.
+.SS "main\&.main ()"
+
+.PP
+.nf
+Main function to resize images and save in ICO and PNG formats\&.
+
+.fi
+.PP
+ .PP
+.nf
+72 def main():
+73     """
+74     Main function to resize images and save in ICO and PNG formats\&.
+75     """
+76     # Check if the source file exists
+77     source_file = "Source\&.png"  # The name and location fo the source ONG\&. (Relative path)
+78     if not os\&.path\&.exists(source_file):
+79         print(f"Source file '{source_file}' not found\&.")
+80         return
+81 
+82     # Load the source image
+83     image = cv\&.imread(source_file)  # The CV object of the image
+84     if image is None:
+85         print(f"Error loading source image '{source_file}'\&.")
+86         return
+87 
+88     sizes = [16, 24, 32, 48, 64, 72, 96, 144, 152, 180, 192, 256, 310]  # The sizing's of the image
+89 
+90     # Create directories if they don't exist
+91     for folder in ["PNGs", "ICOs"]:
+92         os\&.makedirs(folder, exist_ok=True)
+93 
+94     for size in sizes:
+95         # Resize image
+96         resized_image = resize_image(image, (size, size))  # The resized image
+97         if resized_image is None:
+98             continue
+99 
+100         # Convert to a PIL object
+101         image_pil = convert_to_pil(resized_image)  # The PIL\&.Image\&.Image object
+102         if image_pil is None:
+103             continue
+104 
+105         # Save images in ICO format
+106         save_image(image_pil, f"output{size}\&.ico", "ICO", "ICOs")
+107 
+108         # Save images in PNG format
+109         save_image(image_pil, f"output{size}\&.png", "PNG", "PNGs")
+110 
+111 
+.fi
+
+.PP
+References \fBconvert_to_pil()\fP, \fBresize_image()\fP, and \fBsave_image()\fP\&.
+.SS "main\&.resize_image ( image,  size)"
+
+.PP
+.nf
+Resize the input image to the specified size\&.
+
+Parameters:
+- image: numpy\&.ndarray
+    The input image as a NumPy array\&.
+- size: tuple
+    A tuple representing the target size (width, height) for resizing\&.
+
+Returns:
+- numpy\&.ndarray
+    The resized image\&.
+
+.fi
+.PP
+ .PP
+.nf
+10 def resize_image(image, size):
+11     """
+12     Resize the input image to the specified size\&.
+13 
+14     Parameters:
+15     \- image: numpy\&.ndarray
+16         The input image as a NumPy array\&.
+17     \- size: tuple
+18         A tuple representing the target size (width, height) for resizing\&.
+19 
+20     Returns:
+21     \- numpy\&.ndarray
+22         The resized image\&.
+23     """
+24     try:
+25         return cv\&.resize(image, size)
+26     except Exception as e:
+27         print(f"Error resizing image: {e}")
+28         return None
+29 
+30 
+.fi
+
+.PP
+Referenced by \fBmain()\fP\&.
+.SS "main\&.save_image ( image_pil,  filename,  image_format,  folder)"
+
+.PP
+.nf
+Save the PIL Image to a file with the specified filename and format in the specified folder\&.
+
+Parameters:
+- image_pil: PIL\&.Image\&.Image
+    The PIL Image to be saved\&.
+- filename: str
+    The name of the output file\&.
+- image_format: str
+    The format for saving the image (e\&.g\&., 'ICO', 'PNG')\&.
+- folder: str
+    The name of the folder to save the image in\&.
+
+.fi
+.PP
+ .PP
+.nf
+50 def save_image(image_pil, filename, image_format, folder):
+51     """
+52     Save the PIL Image to a file with the specified filename and format in the specified folder\&.
+53 
+54     Parameters:
+55     \- image_pil: PIL\&.Image\&.Image
+56         The PIL Image to be saved\&.
+57     \- filename: str
+58         The name of the output file\&.
+59     \- image_format: str
+60         The format for saving the image (e\&.g\&., 'ICO', 'PNG')\&.
+61     \- folder: str
+62         The name of the folder to save the image in\&.
+63     """
+64     try:
+65 
+66         save_path = os\&.path\&.join(folder, filename)  # Path to save image too
+67         image_pil\&.save(save_path, format=image_format)  # The PIL\&.Image\&.Image object
+68     except Exception as e:
+69         print(f"Error saving image: {e}")
+70 
+71 
+.fi
+
+.PP
+Referenced by \fBmain()\fP\&.
+.SH "Variable Documentation"
+.PP 
+.SS "main\&.message"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for IC: Icon Creator from the source code\&.

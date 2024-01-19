@@ -1,0 +1,54 @@
+\chapter{IRESA\+: Icon Resizer and Export Script}
+\hypertarget{md__sourcecode_2_r_e_a_d_m_e}{}\label{md__sourcecode_2_r_e_a_d_m_e}\index{IRESA: Icon Resizer and Export Script@{IRESA: Icon Resizer and Export Script}}
+\label{md__sourcecode_2_r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__sourcecode_2_r_e_a_d_m_e_autotoc_md0}%
+ IRESA (Icon Resizer and Export Script) is a Python application designed for resizing images and creating icons in ICO and PNG formats for various sizes.\hypertarget{md__sourcecode_2_r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{Features}{Features}}\label{md__sourcecode_2_r_e_a_d_m_e_autotoc_md1}
+
+\begin{DoxyItemize}
+\item Resize images to different sizes.
+\item Generate ICO and PNG files for each resized image.
+\end{DoxyItemize}\hypertarget{md__sourcecode_2_r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{Prerequisites}{Prerequisites}}\label{md__sourcecode_2_r_e_a_d_m_e_autotoc_md2}
+
+\begin{DoxyItemize}
+\item Python 3
+\item Open\+CV ({\ttfamily pip install opencv-\/python})
+\item Pillow ({\ttfamily pip install Pillow})
+\end{DoxyItemize}\hypertarget{md__sourcecode_2_r_e_a_d_m_e_autotoc_md3}{}\doxysection{\texorpdfstring{Usage}{Usage}}\label{md__sourcecode_2_r_e_a_d_m_e_autotoc_md3}
+
+\begin{DoxyEnumerate}
+\item Clone the repository\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ https://github.com/your-\/username/iresa-\/icon-\/resizer.git}
+\DoxyCodeLine{cd\ iresa-\/icon-\/resizer}
+
+\end{DoxyCode}
+
+\item Install dependencies\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{pip\ install\ -\/r\ requirements.txt}
+
+\end{DoxyCode}
+
+\item Place your source image file named {\ttfamily Source.\+png} in the project directory.
+\item Run the application\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{python\ main.py}
+
+\end{DoxyCode}
+
+\item Check the "{}\+ICOs"{} and "{}\+PNGs"{} directories for the generated icons.
+\end{DoxyEnumerate}\hypertarget{md__sourcecode_2_r_e_a_d_m_e_autotoc_md4}{}\doxysection{\texorpdfstring{Configuration}{Configuration}}\label{md__sourcecode_2_r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyItemize}
+\item Customize the sizes in the {\ttfamily sizes} array in {\ttfamily \doxylink{main_8py}{main.\+py}} to fit your icon size requirements.
+\end{DoxyItemize}\hypertarget{md__sourcecode_2_r_e_a_d_m_e_autotoc_md5}{}\doxysection{\texorpdfstring{Error Handling}{Error Handling}}\label{md__sourcecode_2_r_e_a_d_m_e_autotoc_md5}
+The application includes basic error handling for loading the source file, resizing the image, converting to PIL, and saving the images. Adjustments can be made based on specific requirements and potential error scenarios.\hypertarget{md__sourcecode_2_r_e_a_d_m_e_autotoc_md6}{}\doxysection{\texorpdfstring{License}{License}}\label{md__sourcecode_2_r_e_a_d_m_e_autotoc_md6}
+This project is licensed under the MIT License -\/ see the \mbox{[}LICENSE\mbox{]}(LICENSE) file for details. \`{}\`{}\`{}
+
+Feel free to customize the content further based on your specific project details and requirements. 
