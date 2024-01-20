@@ -33,7 +33,7 @@ IRESA (Icon Resizer and Export Script) is a Python application designed for resi
 4. Run the application:
 
    ```bash
-   python main.py
+   python iresa.py
    ```
 
 5. Check the "ICOs" and "PNGs" directories for the generated icons.
