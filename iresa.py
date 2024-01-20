@@ -10,7 +10,7 @@ images and creating icons in ICO and PNG formats for various sizes.
 Example:
     The script can be executed as follows::
 
-        $ python iresa.py -I Source.png
+        $ python3 iresa.py -I Source.png
 
 Attributes:
     __author__ (str): The author of the script.
@@ -27,7 +27,7 @@ Usage:
     specifying input and output filenames.
 
     Example:
-        $ python iresa_icon_resizer.py -I Source.png -O MyIcon
+        $ python3 iresa_icon_resizer.py -I Source.png -O MyIcon
 
 Dependencies:
     - OpenCV: Image processing library (install with `pip install opencv-python`)
